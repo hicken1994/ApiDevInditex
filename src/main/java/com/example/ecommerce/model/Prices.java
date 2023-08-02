@@ -3,7 +3,7 @@ package com.example.ecommerce.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-
+// Se crea el objeto entidad para definir los precios.
 @Entity
 @Table(name = "PRICES")
 public class Prices {

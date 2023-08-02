@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+// Se crea el servicio que maneja los precios, y se maneja por parametros.
 @Service
 public class PriceService {
     private final PriceRepository priceRepository;

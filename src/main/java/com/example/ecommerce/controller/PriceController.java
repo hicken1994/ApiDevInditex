@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
-
+// Se crea el controlador que maneja los precios.
 @RestController
 public class PriceController {
     private final PriceService priceService;

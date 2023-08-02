@@ -1,7 +1,7 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
-
+// Se crea la entidad para las brand o marcas relacionadas.
 @Entity
 @Table(name = "BRANDS")
 public class Brand {
