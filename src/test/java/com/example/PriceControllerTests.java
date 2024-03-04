@@ -1,164 +1,172 @@
 package com.example;
 
-import com.example.ecommerce.Dto.PriceDto;
-import com.example.ecommerce.controller.PriceController;
-import com.example.ecommerce.service.PriceService;
-import org.junit.jupiter.api.DisplayName;
+import com.example.ecommerce.api.Dto.PriceDto;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.*;
 
-@WebMvcTest(PriceController.class)
-public class PriceControllerTests {
-    @Autowired
-    private MockMvc mockMvc;
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = com.example.ecommerce.boot.AdaptadorInditex.class)
+class PriceControllerTests {
 
-    @MockBean
-    private PriceService priceService;
+    private static RestTemplate templateRest = null;
 
-    @Test
-    @DisplayName("Test 1: petición a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
-    public void getPrice_Test1() throws Exception {
-        PriceDto priceDto = new PriceDto();
-        priceDto.setProductId(35455L);
-        priceDto.setBrandId(1L);
-        priceDto.setPriceList(1);
-        priceDto.setStartDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0));
-        priceDto.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
-        priceDto.setPrice(35.50);
-        priceDto.setCurrency("EUR");
+    private final String URL_TEST1 = "price?brandId=1&productId=35455&priceDate=2020-06-14T10:00:00Z";
 
-        when(priceService.getPriceByParameters(any(), any(), any())).thenReturn(priceDto);
+    private final String URL_TEST2 = "price?brandId=1&productId=35455&priceDate=2020-06-14T16:00:00Z";
 
-        mockMvc.perform(get("/prices")
-                        .param("applicationDate", "2020-06-14T10:00:00")
-                        .param("productId", "35455")
-                        .param("brandId", "1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").value(35455))
-                .andExpect(jsonPath("$.brandId").value(1))
-                .andExpect(jsonPath("$.priceList").value(1))
-                .andExpect(jsonPath("$.startDate").value("2020-06-14T00:00:00"))
-                .andExpect(jsonPath("$.endDate").value("2020-12-31T23:59:59"))
-                .andExpect(jsonPath("$.price").value(35.50))
-                .andExpect(jsonPath("$.currency").value("EUR"));
+    private final String URL_TEST3 = "price?brandId=1&productId=35455&priceDate=2020-06-14T21:00:00Z";
+
+    private final String URL_TEST4 = "price?brandId=1&productId=35455&priceDate=2020-06-15T10:00:00Z";
+
+    private final String URL_TEST5 = "price?brandId=1&productId=35455&priceDate=2020-06-16T21:00:00Z";
+
+    private final String TEST6_URL_NO_ENCONTRADA = "price?brandId=2&productId=35455&priceDate=2020-06-16T21:00:00Z";
+
+    private final String TEST6_PARAMETROS_NO_VALIDOS_URL = "price?brandId=-2&productId=35455&priceDate=2020-06-16T21:00:00Z";
+
+    private final int ID_PRODUCTO = 35455;
+
+    private final int ID_MARCA = 1;
+
+    private final int TASA_TARIFARIA_1 = 1;
+
+    private final int TASA_TARIFARIA_2 = 2;
+
+    private final int TASA_TARIFARIA_3 = 3;
+
+    private final int TASA_TARIFARIA_4 = 4;
+
+    private final DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss");
+
+    @LocalServerPort
+    private int puerto;
+
+    private String baseUrl = "http://localhost";
+    @BeforeAll
+    public static void init() {
+
+        templateRest = new RestTemplate();
+
     }
-    @Test
-    @DisplayName("Test 2: petición a las 16:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
-    public void getPrice_Test2() throws Exception {
-        PriceDto priceDto = new PriceDto();
-        priceDto.setProductId(35455L);
-        priceDto.setBrandId(1L);
-        priceDto.setPriceList(1);
-        priceDto.setStartDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0));
-        priceDto.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
-        priceDto.setPrice(25.45);
-        priceDto.setCurrency("EUR");
-
-        when(priceService.getPriceByParameters(any(), any(), any())).thenReturn(priceDto);
-
-        mockMvc.perform(get("/prices")
-                        .param("applicationDate", "2020-06-14T16:00:00")
-                        .param("productId", "35455")
-                        .param("brandId", "1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").value(35455))
-                .andExpect(jsonPath("$.brandId").value(1))
-                .andExpect(jsonPath("$.priceList").value(1))
-                .andExpect(jsonPath("$.startDate").value("2020-06-14T00:00:00"))
-                .andExpect(jsonPath("$.endDate").value("2020-12-31T23:59:59"))
-                .andExpect(jsonPath("$.price").value(25.45))
-                .andExpect(jsonPath("$.currency").value("EUR"));
+    @BeforeEach
+    public void setUp() {
+        baseUrl = baseUrl.concat(":").concat(puerto + "").concat("/inditex/api/");
     }
+
     @Test
-    @DisplayName("Test 3: petición a las 21:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
-    public void getPrice_Test3() throws Exception {
-        PriceDto priceDto = new PriceDto();
-        priceDto.setProductId(35455L);
-        priceDto.setBrandId(1L);
-        priceDto.setPriceList(1);
-        priceDto.setStartDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0));
-        priceDto.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
-        priceDto.setPrice(35.50);
-        priceDto.setCurrency("EUR");
+    void prueba1_exitosa() {
+        //Given
+        final LocalDateTime startDate = LocalDateTime.parse("2020-06-14-00.00.00", formatoFecha);
+        final LocalDateTime endDate = LocalDateTime.parse("2020-12-31-23.59.59", formatoFecha);
 
-        when(priceService.getPriceByParameters(any(), any(), any())).thenReturn(priceDto);
+        PriceDto priceDto = new PriceDto(ID_PRODUCTO, ID_MARCA, TASA_TARIFARIA_1, startDate, endDate, new BigDecimal("35.50"));
 
-        mockMvc.perform(get("/prices")
-                        .param("applicationDate", "2020-06-14T21:00:00")
-                        .param("productId", "35455")
-                        .param("brandId", "1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").value(35455))
-                .andExpect(jsonPath("$.brandId").value(1))
-                .andExpect(jsonPath("$.priceList").value(1))
-                .andExpect(jsonPath("$.startDate").value("2020-06-14T00:00:00"))
-                .andExpect(jsonPath("$.endDate").value("2020-12-31T23:59:59"))
-                .andExpect(jsonPath("$.price").value(35.5))
-                .andExpect(jsonPath("$.currency").value("EUR"));
+        // Call
+        PriceDto response = templateRest.getForObject(baseUrl.concat(URL_TEST1), PriceDto.class);
+
+        // Verify
+        assertEquals(response, priceDto);
     }
+
     @Test
-    @DisplayName("Test 4: petición a las 10:00 del día 15 del producto 35455 para la brand 1 (ZARA)")
-    public void getPrice_Test4() throws Exception {
-        PriceDto priceDto = new PriceDto();
-        priceDto.setProductId(35455L);
-        priceDto.setBrandId(1L);
-        priceDto.setPriceList(1);
-        priceDto.setStartDate(LocalDateTime.of(2020, 6, 15, 0, 0, 0));
-        priceDto.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
-        priceDto.setPrice(30.50);
-        priceDto.setCurrency("EUR");
+    void prueba1_falla() {
+        // Given
+        final LocalDateTime startDate = LocalDateTime.parse("2020-06-14-00.00.00", formatoFecha);
+        final LocalDateTime endDate = LocalDateTime.parse("2020-12-31-23.59.59", formatoFecha);
 
-        when(priceService.getPriceByParameters(any(), any(), any())).thenReturn(priceDto);
+        PriceDto priceDto = new PriceDto(ID_PRODUCTO, ID_MARCA, TASA_TARIFARIA_1, startDate, endDate, new BigDecimal("37.50"));
 
-        mockMvc.perform(get("/prices")
-                        .param("applicationDate", "2020-06-15T10:00:00")
-                        .param("productId", "35455")
-                        .param("brandId", "1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").value(35455))
-                .andExpect(jsonPath("$.brandId").value(1))
-                .andExpect(jsonPath("$.priceList").value(1))
-                .andExpect(jsonPath("$.startDate").value("2020-06-15T00:00:00"))
-                .andExpect(jsonPath("$.endDate").value("2020-12-31T23:59:59"))
-                .andExpect(jsonPath("$.price").value(30.50))
-                .andExpect(jsonPath("$.currency").value("EUR"));
+        // Call
+        PriceDto response = templateRest.getForObject(baseUrl.concat(URL_TEST1), PriceDto.class);
+
+        // Verify
+        assertNotEquals(response, priceDto);
     }
+
     @Test
-    @DisplayName("Test 5: petición a las 16:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
-    public void getPrice_Test5() throws Exception {
-        PriceDto priceDto = new PriceDto();
-        priceDto.setProductId(35455L);
-        priceDto.setBrandId(1L);
-        priceDto.setPriceList(1);
-        priceDto.setStartDate(LocalDateTime.of(2020, 6, 15, 0, 0, 0));
-        priceDto.setEndDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59));
-        priceDto.setPrice(38.95);
-        priceDto.setCurrency("EUR");
+    void prueba2_funcional() {
+        // Given
+        final LocalDateTime startDate = LocalDateTime.parse("2020-06-14-15.00.00", formatoFecha);
+        final LocalDateTime endDate = LocalDateTime.parse("2020-06-14-18.30.00", formatoFecha);
 
-        when(priceService.getPriceByParameters(any(), any(), any())).thenReturn(priceDto);
+        PriceDto priceDto = new PriceDto(ID_PRODUCTO, ID_MARCA, TASA_TARIFARIA_2, startDate, endDate, new BigDecimal("25.45"));
 
-        mockMvc.perform(get("/prices")
-                        .param("applicationDate", "2020-06-15T21:00:00")
-                        .param("productId", "35455")
-                        .param("brandId", "1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.productId").value(35455))
-                .andExpect(jsonPath("$.brandId").value(1))
-                .andExpect(jsonPath("$.priceList").value(1))
-                .andExpect(jsonPath("$.startDate").value("2020-06-15T00:00:00"))
-                .andExpect(jsonPath("$.endDate").value("2020-12-31T23:59:59"))
-                .andExpect(jsonPath("$.price").value(38.95))
-                .andExpect(jsonPath("$.currency").value("EUR"));
+        // Call
+        PriceDto response = templateRest.getForObject(baseUrl.concat(URL_TEST2), PriceDto.class);
+
+        // Verify
+        assertEquals(response, priceDto);
+    }
+
+    @Test
+    void prueba3_funcional() {
+        // Given
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss");
+        final LocalDateTime startDate = LocalDateTime.parse("2020-06-14-00.00.00", formatoFecha);
+        final LocalDateTime endDate = LocalDateTime.parse("2020-12-31-23.59.59", formatoFecha);
+
+        PriceDto priceDto = new PriceDto(ID_PRODUCTO, ID_MARCA, TASA_TARIFARIA_1, startDate, endDate, new BigDecimal("35.50"));
+
+        // Call
+        PriceDto response = templateRest.getForObject(baseUrl.concat(URL_TEST3), PriceDto.class);
+
+        // Verify
+        assertEquals(response, priceDto);
+    }
+
+    @Test
+    void prueba4_funcional() {
+        // Given
+        final LocalDateTime startDate = LocalDateTime.parse("2020-06-15-00.00.00", formatoFecha);
+        final LocalDateTime endDate = LocalDateTime.parse("2020-06-15-11.00.00", formatoFecha);
+
+        PriceDto priceDto = new PriceDto(ID_PRODUCTO, ID_MARCA, TASA_TARIFARIA_3, startDate, endDate, new BigDecimal("30.50"));
+
+        // Call
+        PriceDto response = templateRest.getForObject(baseUrl.concat(URL_TEST4), PriceDto.class);
+
+        // Verify
+        assertEquals(response, priceDto);
+    }
+
+    @Test
+    void prueba5_funcional() {
+        // Given
+        final LocalDateTime startDate = LocalDateTime.parse("2020-06-15-16.00.00", formatoFecha);
+        final LocalDateTime endDate = LocalDateTime.parse("2020-12-31-23.59.59", formatoFecha);
+
+        PriceDto priceDto = new PriceDto(ID_PRODUCTO, ID_MARCA, TASA_TARIFARIA_4, startDate, endDate, new BigDecimal("38.95"));
+
+        // Call
+        PriceDto response = templateRest.getForObject(baseUrl.concat(URL_TEST5), PriceDto.class);
+
+        // Verify
+        assertEquals(response, priceDto);
+    }
+
+    @Test
+    void prueba6_preciosInexistentesfalla() {
+        // Call and Verify
+        assertThrows(HttpClientErrorException.NotFound.class, () -> {
+            templateRest.getForObject(baseUrl.concat(TEST6_URL_NO_ENCONTRADA), PriceDto.class);
+        });
+    }
+
+    @Test
+    void prueba6_parametrosinvalidos_falla() {
+        // Call and Verify
+        assertThrows(HttpClientErrorException.UnprocessableEntity.class, () -> {
+            templateRest.getForObject(baseUrl.concat(TEST6_PARAMETROS_NO_VALIDOS_URL), PriceDto.class);
+        });
     }
 }

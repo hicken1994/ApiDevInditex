@@ -1,0 +1,51 @@
+Segun el detalle que se solicita en el siguiente archivo se explica el desarrollo de la APP
+
+ Se crea la carpeta src que tiene todo el codigo principal, dividido en:
+ 1) Api: Se crean los procesos a nivel de seguridad para el Service:
+
+  Se quiso realizar autenticacion con SpringSecurity pero solo funcionaba para las test y no para la OpenAPI
+  Sin embargo este es el codigo que se propuso:
+
+
+          http
+                  .authorizeRequests()
+                  .antMatchers("/inditex/api/price", "/login#/controlador-precio/obtenerPrecioProducto").permitAll()
+                  .anyRequest().authenticated()
+                  .and()
+                  .formLogin()
+                  .and()
+                  .httpBasic();
+
+
+  En la carpeta controller se encuentra el controlador diseñado para los mensajes de respuesta.
+  La carpeta Dto contiene el objeto de transferencia de Datos de precios.
+  Se manejan excepciones para los casos requeridos en la capa del API.
+  Se hace el mapeo de campos desde la Interfaz Product Price Mapeo.
+
+ 2) Boot: Contiene todas las configuraciones para la conexion con la base de datos H2- Ligada a los recursos externos al codigo
+ AdaptadorInditex:
+ a) Crea una aplicación Spring Boot.
+ b) Inicializa una base de datos H2 en memoria.
+ c) Define una función para convertir datos CSV a objetos Java- tomando como referencia la tabla prices.csv entregada.
+ d) Llena la base de datos con datos de un archivo CSV.
+ e) Proporciona un objeto JdbcTemplate para interactuar con la base de datos.
+
+3) Dominio: Se crean los casos de uso del aplicativo, las entidades a nivel de PrecioProducto,
+las excepciones cuando los parametros no son validos o no se tiene precio
+jpa: Se obtienen los precios de los productos.
+
+Tambien se crean test de Integracion para evaluar cada caso en concreto:
+
+
+
+ La creacion de este servicio se encuentra expuesta en el siguiente link:
+
+ http://localhost:9002/swagger-ui/index.html#/controlador-precio/obtenerPrecioProducto
+
+ Por favor tener en cuenta lo siguiente:
+
+Para ejecutar la app basta con enviar el comando desde el repositorio git clonado (carpeta padre)
+-- mvn springboot:run
+
+Para ejecutar los tests:
+-- mvn clean test

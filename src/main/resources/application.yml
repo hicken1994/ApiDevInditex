@@ -1,0 +1,13 @@
+#server
+server:
+  port: 9002
+#Connection profiles
+spring:
+  profiles:
+    active: dev
+  h2:
+    console:
+      enabled: true
+springdoc:
+  swagger-ui:
+    path: /price-api-inditex.html
