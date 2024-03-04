@@ -45,7 +45,7 @@ Tambien se crean test de Integracion para evaluar cada caso en concreto:
  Por favor tener en cuenta lo siguiente:
 
 Para ejecutar la app basta con enviar el comando desde el repositorio git clonado (carpeta padre)
--- mvn springboot:run
+-- mvn spring-boot:run
 
 Para ejecutar los tests:
 -- mvn clean test

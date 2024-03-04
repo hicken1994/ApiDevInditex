@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-project" />
+        <module name="Inditex_JR_2024" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="13">
@@ -16,6 +17,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Inditex_JR_2024" options="-parameters" />
       <module name="Inditex_exercise_2022" options="-parameters" />
       <module name="spring-boot-project" options="-parameters" />
     </option>

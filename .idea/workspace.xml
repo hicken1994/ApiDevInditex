@@ -5,46 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80ce69c4-c8cf-4748-a61b-9a2404080f1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/Dto/PriceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/authenticator/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/controller/ControladorPrecio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/excepciones/GlobalContException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/excepciones/InditexConxServiceError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/mapeos/ProductPriceMapeo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/AdaptadorInditex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/config/ConfiguracionDatasource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/config/InditexPropiedadesConexion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/casosUso/ObtenerPrecioPorProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/casosUso/ObtenerPrecioPorProductoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/entidades/PrecioProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/excepciones/InditexParametersNotValid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/excepciones/InditexPriceNotFound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/jpa/PrecioProductoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/repostory/PrecioProductoRepositorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/repostory/stereotypes/UseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/validadores/PrecioProductoValidador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prices.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/Dto/PriceDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/EcommerceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/controller/PriceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/model/Brand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/model/Prices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/repostory/PriceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/service/PriceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/PriceControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/PriceControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/TestApplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,56 +41,56 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2SKtF2Cr9SeP5zFrSJmdmIM1D1j" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "JUnit.PriceControllerTests.executor": "Debug",
-    "JUnit.PriceControllerTests.prueba1_exitosa.executor": "Debug",
-    "JUnit.PriceControllerTests.prueba5_funcional.executor": "Debug",
-    "Maven.Ejercicio_Inditex_2024 [clean].executor": "Run",
-    "Maven.Ejercicio_Inditex_2024 [compile].executor": "Run",
-    "Maven.Ejercicio_Inditex_2024 [install].executor": "Run",
-    "Maven.Inditex_technical_test_2024 [clean].executor": "Run",
-    "Maven.Inditex_technical_test_2024 [compile].executor": "Run",
-    "Maven.Inditex_technical_test_2024 [install].executor": "Run",
-    "Maven.Inditex_technical_test_2024 [validate].executor": "Run",
-    "Maven.spring-boot-project [clean].executor": "Debug",
-    "Maven.spring-boot-project [compile] (1).executor": "Debug",
-    "Maven.spring-boot-project [compile] (2).executor": "Debug",
-    "Maven.spring-boot-project [compile].executor": "Debug",
-    "Maven.spring-boot-project [test].executor": "Debug",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AdaptadorInditex.executor": "Debug",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/USER/CursosJav/Spring-boot-challenge",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.PriceControllerTests.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PriceControllerTests.prueba1_exitosa.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PriceControllerTests.prueba5_funcional.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.Ejercicio_Inditex_2024 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejercicio_Inditex_2024 [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Ejercicio_Inditex_2024 [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Inditex_technical_test_2024 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Inditex_technical_test_2024 [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Inditex_technical_test_2024 [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Inditex_technical_test_2024 [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.spring-boot-project [clean].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.spring-boot-project [compile] (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.spring-boot-project [compile] (2).executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.spring-boot-project [compile].executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.spring-boot-project [test].executor&quot;: &quot;Debug&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AdaptadorInditex.executor&quot;: &quot;Debug&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/CursosJav/InditexJav&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USER\CursosJav\ApiTechnicalLead\src\main\resources" />
@@ -137,7 +99,22 @@
       <recent name="com.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.AdaptadorInditex">
+  <component name="RunManager" selected="JUnit.PriceControllerTests (1)">
+    <configuration name="PriceControllerTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Inditex_JR_2024" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.PriceControllerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PriceControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-project" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -159,12 +136,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PriceControllerTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot-project" />
-      <option name="PACKAGE_NAME" value="com.example" />
-      <option name="MAIN_CLASS_NAME" value="com.example.PriceControllerTests" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="InditexJav" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="InditexJav" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -309,7 +289,7 @@
     <configuration name="AdaptadorInditex" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="14" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="spring-boot-project" />
+      <module name="Inditex_JR_2024" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ecommerce.boot.AdaptadorInditex" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -323,19 +303,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.PriceControllerTests (1)" />
       <item itemvalue="JUnit.PriceControllerTests" />
       <item itemvalue="Maven.spring-boot-project [compile]" />
       <item itemvalue="Maven.spring-boot-project [clean]" />
       <item itemvalue="Maven.spring-boot-project [test]" />
+      <item itemvalue="Spring Boot.EcommerceApplication" />
       <item itemvalue="Spring Boot.AdaptadorInditex" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PriceControllerTests (1)" />
         <item itemvalue="Maven.spring-boot-project [compile]" />
         <item itemvalue="JUnit.PriceControllerTests" />
         <item itemvalue="Maven.spring-boot-project [clean]" />
         <item itemvalue="Spring Boot.AdaptadorInditex" />
-        <item itemvalue="Maven.spring-boot-project [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -356,6 +338,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688906994980</updated>
       <workItem from="1709402109292" duration="65364000" />
+      <workItem from="1709590997882" duration="120000" />
     </task>
     <servers />
   </component>
