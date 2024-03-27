@@ -1,33 +1,29 @@
-Segun el detalle que se solicita en el siguiente archivo se explica el desarrollo de la APP
 
- Se crea la carpeta src que tiene todo el codigo principal, dividido en:
- 1) Api: Se crean los procesos a nivel de seguridad para el Service:
+El proyecto se divide en cinco carpetas, respetando el desarrollo de API en SpringBoot
+API:
+- auth: Tiene la configuracion de seguridad web (SpringSecurity).
+- controller: El controlador API para obtener los precios.
+- Dto: A donde van los datos despues de ser mapeados por el controlador.
+- exceptions: Todas las excepciones que se puedan dar en la API a nivel de Configuracion.
+- mapping: Permite mapear los datos entre la entidad PriceProduct y el Dto PriceDto.
+BOOT:
+-Carpeta para el lanzamiento de la aplicacion en Spring, y las configuraciones que conlleva (Carga de Datos de prueba, mapeo de repositorios)
+DOMAIN:
+-Carpeta que contiene las entidades y casos de Uso aplicados para realizar las pruebas del APIREST.
+EXCEPTIONS:
+-Maneja el conjunto de excepciones del proyecto, exceptuando aquellas mapeadas en el modulo de API.
+PERSISTENCE- REPOSITORIES:
+- Implementa el repositorio de CustomPriceProductRepository para interactuar con la BBDD y recuperar los detalles de la tabla Prices.
+Adicionalmente se manejan instancias de entityManager para crear y eliminar instancias persistentes de la base de datos.
 
 
-  En la carpeta controller se encuentra el controlador diseñado para los mensajes de respuesta.
-  La carpeta Dto contiene el objeto de transferencia de Datos de precios.
-  Se manejan excepciones para los casos requeridos en la capa del API.
-  Se hace el mapeo de campos desde la Interfaz Product Price Mapeo.
-
- 2) Boot: Contiene todas las configuraciones para la conexion con la base de datos H2- Ligada a los recursos externos al codigo
- AdaptadorInditex:
- a) Crea una aplicación Spring Boot.
- b) Inicializa una base de datos H2 en memoria.
- c) Define una función para convertir datos CSV a objetos Java- tomando como referencia la tabla prices.csv entregada.
- d) Llena la base de datos con datos de un archivo CSV.
- e) Proporciona un objeto JdbcTemplate para interactuar con la base de datos.
-
-3) Dominio: Se crean los casos de uso del aplicativo, las entidades a nivel de PrecioProducto,
-las excepciones cuando los parametros no son validos o no se tiene precio
-jpa: Se obtienen los precios de los productos.
 
 Tambien se crean test de Integracion para evaluar cada caso en concreto:
 
 
+La creacion de este servicio se encuentra expuesta en el siguiente link:
 
- La creacion de este servicio se encuentra expuesta en el siguiente link:
-
- http://localhost:9002/swagger-ui/index.html#/controlador-precio/obtenerPrecioProducto
+ http://localhost:9002/swagger-ui/index.html#/price-controller/getProductPrice
 
  Por favor tener en cuenta lo siguiente:
 
