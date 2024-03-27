@@ -15,8 +15,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import static com.example.Constant.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = InditexAdapter.class)
 class PriceControllerTests {
@@ -40,6 +39,12 @@ class PriceControllerTests {
         assertEquals(response, expectedDto);
     }
 
+    private void generateTestRequestFail(LocalDateTime startDate, LocalDateTime endDate, BigDecimal expectedPrice, String testUrlSuffix, int tariff) {
+        PriceDto expectedDto = new PriceDto(ID_PRODUCT, ID_BRAND, tariff, startDate, endDate, expectedPrice);
+        PriceDto response = templateRest.getForObject(baseUrl + testUrlSuffix, PriceDto.class);
+        assertNotEquals(response, expectedDto);
+    }
+
     @Test
     void test1_successful() {
         generateTestRequest(
@@ -49,6 +54,18 @@ class PriceControllerTests {
                 String.format(URL_TEMPLATE, "2020-06-14T10:00:00Z"),
                 RATE_TARIFF_1);
     }
+
+
+    @Test
+    void test1_fail() {
+        generateTestRequestFail(
+                LocalDateTime.parse("2020-06-14-00.00.00", dateFormats),
+                LocalDateTime.parse("2020-12-31-23.59.59", dateFormats),
+                new BigDecimal("37.50"),
+                String.format(URL_TEMPLATE, "2020-06-14T10:00:00Z"),
+                RATE_TARIFF_1);
+    }
+
 
     @Test
     void test2_successful() {

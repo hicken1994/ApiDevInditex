@@ -5,43 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80ce69c4-c8cf-4748-a61b-9a2404080f1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inditex_JR_2024.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/mapping/ProductPriceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/InditexAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/TestDataConfigService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/domain/entities/PriceProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/domain/useCases/GetPricePerProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/domain/useCases/GetPricePerProductImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/persistence/repository/CustomPriceProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/persistence/repository/PriceProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/persistence/repository/impl/PriceProductRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/E2ETest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/Dto/PriceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/Dto/PriceDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/authenticator/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/authenticator/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/controller/ControladorPrecio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/controller/PriceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/excepciones/GlobalContException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/exceptions/GlobalContException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/excepciones/InditexConxServiceError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/exceptions/InditexConxServiceError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/api/mapeos/ProductPriceMapeo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/AdaptadorInditex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/config/ConfiguracionDatasource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/boot/config/InditexPropiedadesConexion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/casosUso/ObtenerPrecioPorProducto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/casosUso/ObtenerPrecioPorProductoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/entidades/PrecioProducto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/excepciones/InditexParametersNotValid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/exceptions/InditexParametersNotValid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/excepciones/InditexPriceNotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/exceptions/InditexPriceNotFound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/jpa/PrecioProductoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/repostory/PrecioProductoRepositorio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/repostory/stereotypes/UseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ecommerce/dominio/validadores/PrecioProductoValidador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/PriceControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/PriceControllerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +57,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "JUnit.E2ETest.executor": "Run",
     "JUnit.E2ETest.testGetPricePerProduct.executor": "Run",
-    "JUnit.PriceControllerTests (1).executor": "Run",
+    "JUnit.PriceControllerTests (1).executor": "Debug",
     "JUnit.PriceControllerTests.executor": "Debug",
     "JUnit.PriceControllerTests.prueba1_exitosa.executor": "Debug",
     "JUnit.PriceControllerTests.prueba5_funcional.executor": "Debug",
@@ -121,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AdaptadorInditex.executor": "Debug",
-    "Spring Boot.InditexAdapter.executor": "Debug",
+    "Spring Boot.InditexAdapter.executor": "Run",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/USER/CursosJav/InditexJav",
@@ -145,7 +110,7 @@
       <recent name="com.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.E2ETest">
+  <component name="RunManager" selected="JUnit.PriceControllerTests (1)">
     <configuration name="E2ETest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inditex_JR_2024" />
       <extension name="coverage">
@@ -325,10 +290,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PriceControllerTests (1)" />
         <item itemvalue="JUnit.E2ETest" />
         <item itemvalue="JUnit.E2ETest.testGetPricePerProduct" />
         <item itemvalue="Maven.spring-boot-project [compile]" />
-        <item itemvalue="JUnit.PriceControllerTests (1)" />
         <item itemvalue="JUnit.PriceControllerTests.prueba1_exitosa" />
       </list>
     </recent_temporary>
@@ -347,7 +312,7 @@
       <workItem from="1711453786725" duration="3126000" />
       <workItem from="1711457576894" duration="62000" />
       <workItem from="1711457918079" duration="33906000" />
-      <workItem from="1711492692847" duration="17895000" />
+      <workItem from="1711492692847" duration="19615000" />
     </task>
     <servers />
   </component>
