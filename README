@@ -3,19 +3,6 @@ Segun el detalle que se solicita en el siguiente archivo se explica el desarroll
  Se crea la carpeta src que tiene todo el codigo principal, dividido en:
  1) Api: Se crean los procesos a nivel de seguridad para el Service:
 
-  Se quiso realizar autenticacion con SpringSecurity pero solo funcionaba para las test y no para la OpenAPI
-  Sin embargo este es el codigo que se propuso:
-
-
-          http
-                  .authorizeRequests()
-                  .antMatchers("/inditex/api/price", "/login#/controlador-precio/obtenerPrecioProducto").permitAll()
-                  .anyRequest().authenticated()
-                  .and()
-                  .formLogin()
-                  .and()
-                  .httpBasic();
-
 
   En la carpeta controller se encuentra el controlador diseñado para los mensajes de respuesta.
   La carpeta Dto contiene el objeto de transferencia de Datos de precios.

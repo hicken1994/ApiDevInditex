@@ -19,21 +19,21 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 
 public class PriceDto implements Serializable {
-    private int idProducto;
-    private int idMarca;
-    private int  tasaTarifaria;
-    private LocalDateTime fechaInicio;
-    private LocalDateTime fechaFin;
-    private BigDecimal precio;
+    private int productId;
+    private int brandId;
+    private int  priceList;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+    private BigDecimal price;
 
 
-    public PriceDto(int idProducto, int idMarca, int tasaTarifaria, LocalDateTime fechaInicio, LocalDateTime fechaFin, BigDecimal precio) {
-        this.idProducto = idProducto;
-        this.idMarca = idMarca;
-        this.tasaTarifaria = tasaTarifaria;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.precio = precio;
+    public PriceDto(int productId, int brandId, int priceList, LocalDateTime startDate, LocalDateTime endDate, BigDecimal price) {
+        this.productId = productId;
+        this.brandId = brandId;
+        this.priceList = priceList;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.price = price;
     }
 
     public PriceDto (){
