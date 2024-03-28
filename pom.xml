@@ -15,7 +15,7 @@
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
         <h2.version>2.2.220</h2.version>
         <springdoc.openapi.version>1.6.14</springdoc.openapi.version>
-        <swagger.annotations.version>1.6.2</swagger.annotations.version>
+        <swagger.annotations.version>1.6.13</swagger.annotations.version>
         <annotations.version>13.0</annotations.version>
     </properties>
     <build>
